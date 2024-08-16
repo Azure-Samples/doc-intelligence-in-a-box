@@ -1,5 +1,5 @@
 # Doc-Intelligence-in-a-Box
-![Banner](./readme_assets/banner-doc-intelligence-in-a-box.png)
+![Banner](./media/banner-doc-intelligence-in-a-box.png)
 
 ## Use Case
 This solution accelerator empowers companies to automate the processing of PDF forms to modernize their operations, save time, and reduce cost.
@@ -9,7 +9,7 @@ The solution leverages [Azure AI Document Intelligence](https://azure.microsoft.
 ## Solution Architecture
 The below architecture diagram illustrates the main components and information flow of this solution accelerator: 
 
-![Architecture Diagram](./Images/Arch-SA-PDF-Form-Processing-Automation.png "PDF Form Processing Automation Architecture Diagram")
+![Architecture Diagram](./media/Arch-SA-PDF-Form-Processing-Automation.png "PDF Form Processing Automation Architecture Diagram")
 
 1. PDF forms are uploaded to a container in [Azure Data Lake Storage Gen2](https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) (ADLS Gen2).
 1. When PDF forms are uploaded to the container, an [Azure Logic App](https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview) is triggered to start the processing of the PDF form(s).  
@@ -40,7 +40,7 @@ Follow the steps below to set up your Azure resources, create the Document Intel
 
 ### Step 1: Deploy the Solution Accelerator
 
-Follow instructions in the folder `1_infra`: [Deployment Scripts Guide](./1_infra/README.md).
+Follow instructions in the folder `infra`: [Deployment Scripts Guide](./infra/README.md).
 
 ### Step 2: Create Azure AI Document Intelligence Machine Learning Model
 
@@ -52,7 +52,7 @@ Follow instructions in the `4_solution_testing` folder: [Solution Testing Guide]
 
 ### Step 4: Set Up Power BI Model
 
-Follow instructions in the `5_power_bi` folder: [PowerBI Model Guide](./4_power_bi/README.md).
+Follow instructions in the `data/powerbi` folder: [PowerBI Model Guide](./data/powerbi/README.md).
 
 ## Extending the solution in your own environment
 

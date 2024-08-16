@@ -8,7 +8,7 @@ After deploying the Azure Resources, your Document intelligence source will be r
 
 You will see two folders that contain sample training forms, as illustrated below.
 
-![FR Deployment Data Samples](../Images/FR-Deployment-Data-Folders.png)
+![FR Deployment Data Samples](../media/FR-Deployment-Data-Folders.png)
 
 ## Step 2: Upload Sample Forms to Azure Data Lake Storage
 
@@ -24,7 +24,7 @@ In this step, you will train custom Azure AI Document intelligence customer extr
 
 1. Go to [Document Intelligence Studio](https://documentintelligence.ai.azure.com/studio), scroll down to  `Custom Extraction Model` and select `Create new`, as illustrated below.
 
-    ![FR Create Custom Model](../Images/FR-Create-Custom-Model.png)
+    ![FR Create Custom Model](../media/FR-Create-Custom-Model.png)
 
 1. Select `+Create a project` to create a project.
 1. Enter a project name. For example `SafetyFormProject-Set-1` or any other project name of your choice.
@@ -33,35 +33,35 @@ In this step, you will train custom Azure AI Document intelligence customer extr
 1. Select the latest, non-preview API Version.
 1. Now you will be prompted to enter the training data source, as illustrated below. Select your subscription. Select Resource Group, and Azure storage created by the deployment scripts. Enter `samples` in the Blob container field. Enter `train/contoso_set_1` in the Folder path field. Click `Continue`.
 
-    ![FR Training Data Set](../Images/FR-Training-Data-Set.png)
+    ![FR Training Data Set](../media/FR-Training-Data-Set.png)
 
 1. Review Information and click `Create Project`. This step connects the form recognizer studio to Azure data lake storage/container resource in your subscription to access the training data. 
 1. After the project is created, forms with OCR, field key and value pair will appear as illustrated below. Click '`Train`' on upper right corner.
 
-    ![FR Label Data and Train](../Images/FR-Label-Data-and-Train.png)
+    ![FR Label Data and Train](../media/FR-Label-Data-and-Train.png)
 
 1. Fill in information as below, and select the dropdown "Build Mode" to `Template`, and then click `Train`.
 
-    ![FR Train New Model](../Images/FR-Train-New-Model.png)
+    ![FR Train New Model](../media/FR-Train-New-Model.png)
 
 1. Once the training for `contoso_set_1` samples is done, the model will be located in `Models` tab with confidence score of each field, as illustrated below.
 
-    ![FR Field Confidence](../Images/FR-Field-Confidence.png)
+    ![FR Field Confidence](../media/FR-Field-Confidence.png)
 
 1. Train a second model with files stored in `train/contoso_set_2`, using above steps to create a new project and model. Name your second model as `consoto-set-2` or choice of your own.
 1. Click 'Models' from your project. You will see a list of models already created. You can now merge individual models into a composite model. Select `contoso-set-1` and `contoso-set-2`, then click `Compose`. The system will prompt you for a new model name and description. Name it `contoso-safety-forms` and provide a description. Click `Compose`.
 
-    ![FR Merge Models](../Images/FR-Merge-Models.png)
+    ![FR Merge Models](../media/FR-Merge-Models.png)
 
-    ![FR Compose Model](../Images/FR-Compose-Model-Contoso-Safety.png)
+    ![FR Compose Model](../media/FR-Compose-Model-Contoso-Safety.png)
 
 1. Now your model id `contoso-safety-forms` will appear in the Model ID list, as illustrated below. 
 
-    ![FR List of Models](../Images/FR-List-of-Models.png "Project-and-Model-ID")
+    ![FR List of Models](../media/FR-List-of-Models.png "Project-and-Model-ID")
 
 1. If you called your composite model `contoso-safety-forms`, you can move on to [3_solution_testing](..\3_solution_testing\README.md)
 1. If you did NOT call your composite model `contoso-safety-forms`, follow the instructions below:
     1. From the the [Azure Portal](https://portal.azure.com), open the resource group you deployed this solution to.
     1. Find the Azure Functions App, click the resource and get to its overview page.
     1. On left panel, under section **Settings**, click **Environment variables**.  Under the **App**, locate **CUSTOM_BUILT_MODEL_ID** click it and replace the default value with your composite model id.
-    1. click **OK** and then **Save**. After this, your Azure Functions app will work with this document intelligence extraction model.![ModelID](../Images/AF-Set-Configuration-Model-ID.png)
+    1. click **OK** and then **Save**. After this, your Azure Functions app will work with this document intelligence extraction model.![ModelID](../media/AF-Set-Configuration-Model-ID.png)
