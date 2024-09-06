@@ -1,16 +1,16 @@
-# Test the Solution Accelerator
+# Run the Solution
 
 Once you have have successfully deployed and configured the solution as required, follow the instructions below to test the solution.
 
 ## Step 1: Upload PDFs to Azure Data Lake Storage Containers
 
 1. Go to the [Azure Portal](https://portal.azure.com) and select the Azure Storage Account that contains the samples folder.
-1. Click the resource and get to its overview page. 
+1. Click the resource and get to its overview page.
 1. In the menu pane on the left, under `Data storage`, select `Containers`. You should see containers listed as below:
 
     ![ADLS-Containers](../media/Test-ADLS-Containers.png)
 
-1. Navigate to the `file-1-input` folder  and upload selected files from [``..Data/samples/test/contoso_set_1/``](../Data/samples/test/contoso_set_1/) to `file-1-input`.
+1. Navigate to the `file-1-input` folder  and upload selected files from [``..data/samples/test/contoso_set_1/``](../data/samples/test/contoso_set_1/) to `file-1-input`.
 
 ## Step 2: Verify the Form Processing Logic App
 
@@ -30,4 +30,10 @@ Once you have have successfully deployed and configured the solution as required
 1. Expand `form-docs` and you will see `Items`.
 1. Click on `Items` to see the data that was loaded from the PDFs.
 
+<<<<<<<< HEAD:docs/run-the-solution.md
     ![validate-cosmos](../media/validate-cosmos.jpg)
+
+[Now go back to see how you can customize the solution](../README.md#customize-the-solution)
+========
+    ![validate-cosmos](../media/validate-cosmos.jpg)
+>>>>>>>> 359c6be46309fb717eda07211d83c2f4d962fe90:docs/solution-testing-README.md

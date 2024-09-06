@@ -44,50 +44,76 @@
 //********************************************************
 // Global Parameters
 //********************************************************
-targetScope = 'resourceGroup'
+targetScope = 'subscription'
 
+@description('Create or select an Azure resource group.')
 param resourceGroupName string
+@description('Select the Azure region for the resources to be deployed.')
 param resourceLocation string
+@description('The prefix for the resources that will be created')
 param prefix string
+@description('The suffix for the resources that will be created')
 param uniqueSuffix string
 @description('Your Object ID')
 param spObjectId string //This is your own users Object ID
+@description('The name of the environment')
+param environmentName string
+param tags object = {}
+
+
+var vprefix = toLower('${prefix}')
+var vsuffix = toLower('${uniqueSuffix}')
 
 //UAMI Module Parameters
-var deploymentScriptUAMIName = toLower('${prefix}-uami')
+var deploymentScriptUAMIName = '${vprefix}-uami'
 
 //Key Vault Module Parameters
-var keyVaultName = '${prefix}-kv-${uniqueSuffix}'
-param kvSecretPermissions array
-param kvKeyPermissions array
+var keyVaultName = '${vprefix}-kv-${vsuffix}'
+var kvKeyPermissions = [
+  'all'
+  'create'
+  'delete'
+  'get'
+  'update'
+  'list'
+  'purge'
+]
+
+var kvSecretPermissions = [
+  'all'
+  'set'
+  'get'
+  'delete'
+  'purge'
+]
+
 
 //Storage Account Module Parameters - ADLS
-var storageAccountName = '${prefix}adls${uniqueSuffix}'
+var storageAccountName =  '${replace(vprefix,'-','0')}0storage0${replace(vsuffix,'-','0')}'
 
 //CosmosDB Module Parameters
-var cosmosAccountName = '${prefix}-cosmos-${uniqueSuffix}'
+var cosmosAccountName = '${vprefix}-cosmos-${vsuffix}'
 var cosmosDbName = 'form-db' // preset for solution
 var cosmosDbContainerName = 'form-docs' // preset for solution
 
 //Doc Intelligence Module Parameters
-var documentIntelligenceAccountName = '${prefix}-fr-${uniqueSuffix}'
+var documentIntelligenceAccountName = '${vprefix}-fr-${vsuffix}'
 
 //Function App Module Parameters
-var funcAppName = '${prefix}-funcapp'
-var funAppStorageName = '${prefix}funcapp${uniqueSuffix}'
+var funcAppName = '${vprefix}-funcapp'
+var funAppStorageName = '${vprefix}funcapp${vsuffix}'
 
 //Logic App Module Parameters
-var logicAppFormProcName = '${prefix}-logicapp-${uniqueSuffix}'
-var apiCnxADLSName = '${prefix}-ApiCnxADLS'
-var apiCnxCosmosDBName = '${prefix}-ApiCnxCosmosDB'
-var apiCnxKeyVaultName = '${prefix}-ApiCnxKeyVault'
+var logicAppFormProcName = '${vprefix}-logicapp-${vsuffix}'
+var apiCnxADLSName = '${vprefix}-ApiCnxADLS'
+var apiCnxCosmosDBName = '${vprefix}-ApiCnxCosmosDB'
 
 //====================================================================================
 // Existing Resource Group 
 //====================================================================================
-resource resourceGroup 'Microsoft.Resources/resourceGroups@2023-07-01' existing = {
-  name: resourceGroupName
-  scope: subscription()
+resource resourceGroup 'Microsoft.Resources/resourceGroups@2023-07-01' = {
+  name: !empty(resourceGroupName) ? resourceGroupName : '${vprefix}-rg-${vsuffix}'
+  location: resourceLocation
 }
 
 //1. Deploy UAMI
@@ -202,6 +228,8 @@ module m_functionApp 'modules/functionapp.bicep' = {
     uamiId: m_uaManagedIdentity.outputs.uamiId
     uamiClientId: m_uaManagedIdentity.outputs.uamiClientid
     keyVaultName: keyVaultName
+    tags: tags
+    serviceName: 'processforms'
   }
   dependsOn: [
     m_uaManagedIdentity

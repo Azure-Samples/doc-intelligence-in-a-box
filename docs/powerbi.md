@@ -18,11 +18,12 @@
 
    ![PBI-Apply-Changes](../media/PBI-Apply-Changes.png)
 
-1. Power BI will prompt you to enter Cosmos DB Account Key, as illustrated below. Enter your Cosmos DB Account key you saved previously and then click `Connect`. After this, you should see a similar dashboard shown in the [solution accelerator overview](../../README.md).
+1. Power BI will prompt you to enter Cosmos DB Account Key, as illustrated below. Enter your Cosmos DB Account key you saved previously and then click `Connect`. After this, you should see a similar dashboard shown in the [solution accelerator overview](../README.md).
 
    ![PBI-Azure-Cosmos-DB-Key](../media/PBI-Enter-Cosmos-Account-Key.png)
 
 ## Included Power BI Reports
+
 The  Power BI report below shows the number of forms submitted by category. The category is the field key defined by the Azure AI Document Intelligence.
 
 ![PBI w Text Search](../media/PBI-Overview.png)
@@ -30,3 +31,5 @@ The  Power BI report below shows the number of forms submitted by category. The 
 The report below shows the number of safety forms submitted by department, by owner, and by date.
 
 ![PBI w Summary](../media/PBI-Metrics.png)
+
+[Click here to return to the main solution page.](../README.md)

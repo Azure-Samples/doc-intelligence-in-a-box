@@ -15,6 +15,8 @@ param keyVaultName string
 param uamiId string
 param uamiClientId string
 param modelName string = 'contoso-safety-forms'
+param tags object = {}
+param serviceName string = 'docintel-splitfile'
 
 var serverFarmName = '${funcAppName}-ASP'
 var appInsightsName = '${funcAppName}-insight'
@@ -61,6 +63,7 @@ resource serverFarmNameResource 'Microsoft.Web/serverfarms@2022-09-01' = {
 resource functionApp 'Microsoft.Web/sites@2022-09-01' = {
   name: funcAppName
   location: resourceLocation
+  tags: union(tags, { 'azd-service-name': serviceName})
   kind: 'functionapp,linux'
   identity: {
     type: 'SystemAssigned, UserAssigned'
