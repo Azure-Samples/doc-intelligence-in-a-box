@@ -30,10 +30,6 @@ Once you have have successfully deployed and configured the solution as required
 1. Expand `form-docs` and you will see `Items`.
 1. Click on `Items` to see the data that was loaded from the PDFs.
 
-<<<<<<<< HEAD:docs/run-the-solution.md
-    ![validate-cosmos](../media/validate-cosmos.jpg)
+![validate-cosmos](../media/validate-cosmos.jpg)
 
 [Now go back to see how you can customize the solution](../README.md#customize-the-solution)
-========
-    ![validate-cosmos](../media/validate-cosmos.jpg)
->>>>>>>> 359c6be46309fb717eda07211d83c2f4d962fe90:docs/solution-testing-README.md

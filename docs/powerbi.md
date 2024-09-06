@@ -32,4 +32,4 @@ The report below shows the number of safety forms submitted by department, by ow
 
 ![PBI w Summary](../media/PBI-Metrics.png)
 
-[Click here to return to the main solution page.](../README.md)
+[Click here to see other ways to customize the solution page.](../README.md#customize-the-solution)
