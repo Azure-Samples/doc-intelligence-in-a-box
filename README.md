@@ -91,11 +91,15 @@ This solution can easily be modified out of the box with your own PDF forms. Thi
 
 After your Azure Resources are deployed, you will upload the sample forms to you Azure Storage account and create a Custom Extraction model in Document Intelligence Studio.
 
-[Follow the steps here](./docs/machine-learning-instructions.md). Then continue on to run the solution.
+[Follow the steps here to create the machine learning custom extraction model](./docs/machine-learning-instructions.md).
 
 ## Run the Solution
 
-Now you have a solution that will receive extract data from PDF forms and store the data in a Azure Cosmos DB whenever a PDF form is landed in the ADLS Gen2 container. In most cases, you would have some other application that would land the forms in ADLS (such as Azure Data Factory, a feature or app to extract forms from emails, another applications that sends forms to the storage account, etc.). For testing the solution, we will manually upload the files into the ADLS container. [Follow the steps here](./docs/run-the-solution.md)
+Now you have a solution that will receive extract data from PDF forms and store the data in a Azure Cosmos DB whenever a PDF form is landed in the ADLS Gen2 container.  For testing the solution, we will manually upload the files into the ADLS container. [Follow the steps here](./docs/run-the-solution.md)
+
+Note in your scenario, you would have an application that would land the forms in ADLS (such as Azure Data Factory, an app to extract forms from emails, other applications that sends forms to the storage account, etc.) rather than manually uploading files.
+
+### Optional - Create a Power BI semantic model and report to view the results
 
 If you wish, you can then see the results of your test in a Power BI report. [Follow the instructions here to create a Power BI semantic model and report.](./docs/powerbi.md). Otherwise, you can just query the Azure Cosmos DB to see the results.
 

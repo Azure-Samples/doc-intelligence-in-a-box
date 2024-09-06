@@ -32,4 +32,4 @@ Once you have have successfully deployed and configured the solution as required
 
 ![validate-cosmos](../media/validate-cosmos.jpg)
 
-[Now go back to see how you can customize the solution](../README.md#customize-the-solution)
+[Now go back to see how you can customize the solution](../README.md#optional---create-a-power-bi-semantic-model-and-report-to-view-the-results)
