@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 # AI-in-a-Box Document Intelligence-in-a-Box
-=======
-# Doc-Intelligence-in-a-Box
-![Banner](./media/banner-doc-intelligence-in-a-box.png)
->>>>>>> 359c6be46309fb717eda07211d83c2f4d962fe90
 
 <!-- <div style="display: flex;">
   <div style="width: 70%;">
@@ -85,7 +80,7 @@ This solution can easily be modified out of the box with your own PDF forms. Thi
 
 1. Clone this repo:
 
-    `git clone https://github.com/Azure-Samples/gpt-video-analysis-in-a-box`
+    `git clone https://github.com/Azure-Samples/doc-intelligence-in-a-box`
 2. Deploy resources:
 
    `azd auth login`
@@ -96,15 +91,17 @@ This solution can easily be modified out of the box with your own PDF forms. Thi
 
 After your Azure Resources are deployed, you will upload the sample forms to you Azure Storage account and create a Custom Extraction model in Document Intelligence Studio.
 
-[Follow the steps here](docs\machine-learning-instructions.md). Then continue on to run the solution.
+[Follow the steps here](./docs/machine-learning-instructions.md). Then continue on to run the solution.
 
-<a name="run-the-solution> </a>
+<a name="run-the-solution"> </a>
 
 ## Run the Solution
 
-Now you have a solution that will receive extract data from PDF forms and store the data in a Azure Cosmos DB whenever a PDF form is landed in the ADLS Gen2 container. In most cases, you would have some other application that would land the forms in ADLS (such as Azure Data Factory, a feature or app to extract forms from emails, another applications that sends forms to the storage account, etc.). For testing the solution, we will manually upload the files into the ADLS container. [Follow the steps here](docs\)
+Now you have a solution that will receive extract data from PDF forms and store the data in a Azure Cosmos DB whenever a PDF form is landed in the ADLS Gen2 container. In most cases, you would have some other application that would land the forms in ADLS (such as Azure Data Factory, a feature or app to extract forms from emails, another applications that sends forms to the storage account, etc.). For testing the solution, we will manually upload the files into the ADLS container. [Follow the steps here](./docs/run-the-solution.md)
 
-<a name="customize-the-solution> </a>
+If you wish, you can then see the results of your test in a Power BI report. [Follow the instructions here to create a Power BI semantic model and report.](./docs/powerbi.md). Otherwise, you can just query the Azure Cosmos DB to see the results.
+
+<a name="customize-the-solution"> </a>
 
 ## Customize the Solution
 
@@ -129,10 +126,6 @@ Custom models support other file types as well as PDFs. [Read here to see what f
 ### Use Custom Neural Template for form variations
 
 At times, forms may vary in some ways with regards to the form layout. In these cases, where the data extracted is similar but the forms are not exactly the same, a [customer neural template](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/concept-custom-neural?view=doc-intel-4.0.0) may provide better results that a custom template model. Create a custom neural template and test to see if it out-performs the custom template model.
-
-### Create a Power BI semantic model and report
-
-[Follow the instructions here to create a Power BI semantic model and report.](./docs/powerbi.md)
 
 ## How to Contribute
 
