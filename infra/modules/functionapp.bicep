@@ -16,7 +16,7 @@ param uamiId string
 param uamiClientId string
 param modelName string = 'contoso-safety-forms'
 param tags object = {}
-param serviceName string = 'docintel-splitfile'
+param serviceName string = 'processforms'
 
 var serverFarmName = '${funcAppName}-ASP'
 var appInsightsName = '${funcAppName}-insight'

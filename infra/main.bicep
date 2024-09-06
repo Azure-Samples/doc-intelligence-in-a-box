@@ -55,7 +55,7 @@ param prefix string
 @description('The suffix for the resources that will be created')
 param uniqueSuffix string
 @description('Your Object ID')
-param spObjectId string //This is your own users Object ID
+param spObjectId string = ''//This is your own users Object ID
 @description('The name of the environment')
 param environmentName string
 param tags object = {}
