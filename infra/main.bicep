@@ -108,12 +108,15 @@ var logicAppFormProcName = '${vprefix}-logicapp-${vsuffix}'
 var apiCnxADLSName = '${vprefix}-ApiCnxADLS'
 var apiCnxCosmosDBName = '${vprefix}-ApiCnxCosmosDB'
 
+var serviceName = 'processform'
+
 //====================================================================================
 // Existing Resource Group 
 //====================================================================================
 resource resourceGroup 'Microsoft.Resources/resourceGroups@2023-07-01' = {
   name: !empty(resourceGroupName) ? resourceGroupName : '${vprefix}-rg-${vsuffix}'
   location: resourceLocation
+  tags: union(tags, { 'azd-service-name': serviceName,  'azd-env-name': environmentName})
 }
 
 //1. Deploy UAMI
@@ -229,7 +232,8 @@ module m_functionApp 'modules/functionapp.bicep' = {
     uamiClientId: m_uaManagedIdentity.outputs.uamiClientid
     keyVaultName: keyVaultName
     tags: tags
-    serviceName: 'processforms'
+    serviceName: 'processform'
+    environmentName: environmentName
   }
   dependsOn: [
     m_uaManagedIdentity
