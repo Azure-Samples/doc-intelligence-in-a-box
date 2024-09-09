@@ -2,23 +2,22 @@
 
 Follow the steps below to train a Azure AI Document Intelligence custom extraction machine learning (ML) model.
 
-## Step 1: Locate the Sample Data Files
+## Step 1: Upload Pre-labeled Form data to Azure Data Lake Storage
 
-After deploying the Azure Resources, your Document intelligence source will be ready for you to start creating a new Document Intelligence ML model. From your cloned repository, navigate to the project root directory then to [data/samples/train](../data/samples/train/)
-
-You will see two folders that contain sample training forms, as illustrated below.
+In the repository folder [data/samples/train](../data/samples/train/),
+there are pre-labeled training forms:
 
 ![FR Deployment Data Samples](../media/FR-Deployment-Data-Folders.png)
 
-## Step 2: Upload Sample Forms to Azure Data Lake Storage
+These need to be uploaded to the Azure Storage account.
 
-1. Go to the [Azure Portal](https://portal.azure.com) and select the Azure Data Lake Storage Account that was created by deployment script. The name of this account should be <your-prefix>adls<your-suffix>.
+1. Go to the [Azure Portal](https://portal.azure.com) and select the Azure Data Lake Storage Account that was created by deployment script. The name of this account should be <your-prefix>storage<your-suffix>.
 2. On the left side of the menu pane, select `Data storage`, then `Containers` and go to the `samples` container.
 3. Create a new folder and name it `train`.  
 4. In the `train` folder, create two folders. One named `contoso_set_1` and the other named `contoso_set_2`.  
 5. Upload the sample labeling files in [data/samples/train/contoso_set_1](../data/samples/train/contoso_set_1) and [data/samples/train/contoso_set_2](../data/samples/train/contoso_set_2) into the corresponding folders. You now have two full sets of pre-labeled data to create the machine learning models.
 
-## Step 3: Train and Merge Document Intelligence ML Models
+## Step 2: Train and Merge Document Intelligence ML Models
 
 In this step, you will train custom Azure AI Document intelligence custom extraction models and merge them into a composite model. For more information, please refer to Azure online document [Compose Custom Models](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/how-to-guides/compose-custom-models?view=doc-intel-4.0.0&tabs=studio).
 
@@ -44,7 +43,7 @@ In this step, you will train custom Azure AI Document intelligence custom extrac
 
     ![FR Train New Model](../media/FR-Train-New-Model.png)
 
-1. Once the training for `contoso_set_1` samples is done, the model will be located in `Models` tab with confidence score of each field, as illustrated below.
+1. Once the training for `contoso_set_1` samples is done, the model will be located in `Models` section with confidence score of each field, as illustrated below.
 
     ![FR Field Confidence](../media/FR-Field-Confidence.png)
 

@@ -14,7 +14,7 @@ Once you have have successfully deployed and configured the solution as required
 
 ## Step 2: Verify the Form Processing Logic App
 
-1. From Azure portal, open the Form Processing Logic App interface and click 'Run Trigger'.
+1. From Azure portal, open the Form Processing Logic App interface and click 'Run'.
 1. Examine azure storage container `files-2-split`. If successful, you should see results similar to the screen below:
 
    ![Form-Proc-Results](../media/Test-ADLS-Split-Files-Output.png)
@@ -25,10 +25,10 @@ Once you have have successfully deployed and configured the solution as required
 
 ## Step 3: Verify that the Cosmos Database received the data
 
-1. From the Azure portal, go to the Azure Cosmsos Database account that was deployed through this solution.
+1. From the Azure portal, go to the Azure Cosmos Database account that was deployed through this solution.
 1. On the left panel, click `Data Explorer`. You will see a NoSQL database called `form-db` with a table called `form-docs`.
 1. Expand `form-docs` and you will see `Items`.
-1. Click on `Items` to see the data that was loaded from the PDFs.
+1. Click on `Items` to see the form data that was extracted from the PDFs.
 
 ![validate-cosmos](../media/validate-cosmos.jpg)
 
