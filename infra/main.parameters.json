@@ -15,7 +15,7 @@
       "value": ""
     },
     "spObjectId": {
-      "value": "${AZURE_SP_OBJECT_ID}"
+      "value": "${AZURE_PRINCIPAL_ID}"
     },
     "environmentName": {
       "value": "${AZURE_ENV_NAME}"
