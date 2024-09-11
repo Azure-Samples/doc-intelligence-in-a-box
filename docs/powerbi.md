@@ -8,25 +8,28 @@
 
 1. From the `Transform data` drop down menu, click `Edit Parameters`, as illustrated below: 
 
-   ![PowerBIDataSource](../Images/PBI-Edit-Parameters-with-Box.png)
+   ![PowerBIDataSource](../media/PBI-Edit-Parameters-with-Box.png)
 
 1. Fill in the Cosmos DB URI you saved previously, as illustrated below, and click Ok.
 
-   ![Power BI Edit Parameters](../Images/PBI-Edit-Cosmos-DB-Account-Name-w-Box.png)
+   ![Power BI Edit Parameters](../media/PBI-Edit-Cosmos-DB-Account-Name-w-Box.png)
 
 1. Power BI will prompt you to apply change, as illustrated below. Click `Apply changes`.
 
-   ![PBI-Apply-Changes](../Images/PBI-Apply-Changes.png)
+   ![PBI-Apply-Changes](../media/PBI-Apply-Changes.png)
 
-1. Power BI will prompt you to enter Cosmos DB Account Key, as illustrated below. Enter your Cosmos DB Account key you saved previously and then click `Connect`. After this, you should see a similar dashboard shown in the [solution accelerator overview](../../README.md).
+1. Power BI will prompt you to enter Cosmos DB Account Key, as illustrated below. Enter your Cosmos DB Account key you saved previously and then click `Connect`. After this, you should see a similar dashboard shown in the [solution accelerator overview](../README.md).
 
-   ![PBI-Azure-Cosmos-DB-Key](../Images/PBI-Enter-Cosmos-Account-Key.png)
+   ![PBI-Azure-Cosmos-DB-Key](../media/PBI-Enter-Cosmos-Account-Key.png)
 
 ## Included Power BI Reports
+
 The  Power BI report below shows the number of forms submitted by category. The category is the field key defined by the Azure AI Document Intelligence.
 
-![PBI w Text Search](../Images/PBI-Overview.png)
+![PBI w Text Search](../media/PBI-Overview.png)
 
 The report below shows the number of safety forms submitted by department, by owner, and by date.
 
-![PBI w Summary](../Images/PBI-Metrics.png)
+![PBI w Summary](../media/PBI-Metrics.png)
+
+[Click here to see other ways to customize the solution page.](../README.md#customize-the-solution)

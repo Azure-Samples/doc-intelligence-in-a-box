@@ -1,7 +1,7 @@
 # Deploy Azure Resources for the Document Intelligence Accelerator
 
 The **1_infra** folder contains the Bicep code and modules for deploying the resources needed for this Document Intelligence Solution. After creating a Resource Group and running the Bicep deployments, your resource group will contain the following resources:
-![deployed-resources](../Images/Deployed-resources.jpg)
+![deployed-resources](../media/Deployed-resources.jpg)
 
 ## Prerequisites:
 
