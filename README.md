@@ -1,3 +1,24 @@
+---
+page_type: sample
+languages:
+- azdeveloper
+- python
+- bicep
+products:
+- azure
+- azure-key-vault
+- azure-blob-storage
+- azure-cosmos-db
+- ai-services
+- azure-functions
+- azure-logic-apps
+urlFragment: doc-intelligence-in-a-box
+name: Doc Intelligence-In-A-Box
+description: The Doc Intelligence in-a-Box project leverages Azure AI Document Intelligence to extract data from PDF forms and store the data in a Azure Cosmos DB. This solution, part of the AI-in-a-Box framework by Microsoft Customer Engineers and Architects, ensures quality, efficiency, and rapid deployment of AI and ML solutions across various industries.
+
+---
+<!-- YAML front-matter schema: https://review.learn.microsoft.com/en-us/help/contribute/samples/process/onboarding?branch=main#supported-metadata-fields-for-readmemd -->
+
 # AI-in-a-Box Document Intelligence-in-a-Box
 
 <!-- <div style="display: flex;">
