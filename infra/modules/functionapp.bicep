@@ -41,6 +41,7 @@ resource r_funcAppStorage 'Microsoft.Storage/storageAccounts@2022-09-01' = {
     minimumTlsVersion: 'TLS1_2'
     supportsHttpsTrafficOnly: true
     allowBlobPublicAccess: false
+    allowSharedKeyAccess: true
   }
 }
 

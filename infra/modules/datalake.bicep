@@ -46,6 +46,7 @@ resource r_adls 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   location: resourceLocation
   properties: {
     accessTier: 'Hot'
+    allowSharedKeyAccess: true
     encryption: {
       services: {
         file: {
