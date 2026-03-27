@@ -2,7 +2,7 @@
 
 name: doc-intelligence-in-a-box
 metadata:
-    template: azd-init@1.4.4
+    template: doc-intelligence-in-a-box@1.4.4
 services:
      processform:
        project: ./src/processform
